@@ -29,7 +29,7 @@ public class ApiUtils
             Class<?> clazz, String methodName, Class<?>[] paramsTypes,
             Object parent)
     {
-        registerFunction(e, name, clazz, methodName, paramsTypes, parent, true);
+        registerFunction(e, name, clazz, methodName, paramsTypes, parent, false);
     }
     
     public static void registerFunction(JavascriptExecutor e, String name,

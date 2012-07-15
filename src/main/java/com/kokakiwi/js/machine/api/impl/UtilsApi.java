@@ -13,24 +13,10 @@ public class UtilsApi implements JavascriptApi
 {
     public void init(JavascriptCore core, JavascriptExecutor executor)
     {
-        ApiUtils.registerFunction(executor, "stop", UtilsApi.class, "stop",
-                new Class<?>[0], null, false);
-        ApiUtils.registerFunction(executor, "echo", UtilsApi.class, "echo",
-                new Class<?>[] { String.class }, null, false);
         ApiUtils.registerFunction(executor, "wait", UtilsApi.class, "wait",
-                new Class<?>[] { long.class, Function.class });
+                new Class<?>[] { long.class, Function.class }, null, true);
         ApiUtils.registerFunction(executor, "sleep", UtilsApi.class, "sleep",
                 new Class<?>[] { long.class }, null, false);
-    }
-    
-    public static void stop()
-    {
-        System.exit(0);
-    }
-    
-    public static void echo(String message)
-    {
-        System.out.println(message);
     }
     
     public static void sleep(long delay)
